@@ -279,6 +279,7 @@ export default function (obj: { tz:string;uid:string; dev: string, address: numb
 
                     cb();
                 }).catch(function (err) {
+                    console.log(iterator.reg)
                     cb(err);
                 });
 
