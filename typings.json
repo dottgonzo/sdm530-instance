@@ -1,0 +1,8 @@
+{
+  "globalDependencies": {
+    "async": "registry:dt/async#1.4.2+20160602152629",
+    "bluebird": "registry:dt/bluebird#2.0.0+20160701023356",
+    "node": "registry:dt/node#6.0.0+20160709114037",
+    "serialport": "registry:dt/serialport#0.0.0+20160627065358"
+  }
+}
