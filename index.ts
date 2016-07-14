@@ -2,7 +2,7 @@ import * as Promise from "bluebird";
 import * as async from "async";
 
 let ModbusRTU = require("modbus-serial");
-let moment:any = require("moment-timezone");
+let moment: any = require("moment-timezone");
 
 
 
@@ -15,18 +15,18 @@ interface Ireg {
 
 
 interface IAnswer {
-    
-                uid: string;
-                address: number;
-                model: string;
-                firmware: string;
-                active: boolean;
-                grid: {},
-                strings: any[],
-                updatedAt: number;
-                date: string;
-                _id: string;
-            
+
+    uid: string;
+    address: number;
+    model: string;
+    firmware: string;
+    active: boolean;
+    grid: {},
+    strings: any[],
+    updatedAt: number;
+    date: string;
+    _id: string;
+
 }
 
 
@@ -46,7 +46,7 @@ function readReg(client, reg: number) {
 
 }
 
-export default function (obj: { tz:string;uid:string; dev: string, address: number, baud: number, type?: string }) {
+export default function (obj: { tz: string; uid: string; dev: string, address: number, baud: number, type?: string }) {
     return new Promise<IAnswer>(function (resolve, reject) {
         let regs: Ireg[];
         let client = new ModbusRTU();
@@ -287,13 +287,12 @@ export default function (obj: { tz:string;uid:string; dev: string, address: numb
 
                 if (err) {
                     console.log(err);
+                    console.log("malformed data");
 
                     reject(err);
                 } else {
-
-                    console.log(answer);
                     resolve(answer);
-                    console.log("malformed data");
+
                 }
 
 
