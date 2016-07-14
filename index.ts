@@ -14,7 +14,20 @@ interface Ireg {
 }
 
 
-
+interface IAnswer {
+    
+                uid: string;
+                address: number;
+                model: string;
+                firmware: string;
+                active: boolean;
+                grid: {},
+                strings: any[],
+                updatedAt: number;
+                date: string;
+                _id: string;
+            
+}
 
 
 
@@ -34,7 +47,7 @@ function readReg(client, reg: number) {
 }
 
 export default function (obj: { tz:string;uid:string; dev: string, address: number, baud: number, type?: string }) {
-    return new Promise(function (resolve, reject) {
+    return new Promise<IAnswer>(function (resolve, reject) {
         let regs: Ireg[];
         let client = new ModbusRTU();
 
