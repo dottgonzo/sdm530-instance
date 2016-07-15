@@ -244,6 +244,8 @@ export default function (obj: { tz: string; uid: string; dev: string, address: n
 
         function start() {
 
+            client.setID(obj.address);
+
             let answer = <any>{
                 uid: obj.uid,
                 address: obj.address,

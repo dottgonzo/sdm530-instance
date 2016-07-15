@@ -1,6 +1,6 @@
 {
   "name": "sdm530-instance",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "sdm530",
   "main": "index.js",
   "scripts": {
